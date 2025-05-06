@@ -1,5 +1,8 @@
 # emo-classification-bilstm
 
+<br/>
+<br/>
+
 ## Introduction
 In traditional neural networks, the information flows in one direction from input to output. However in RNNs, information is fed back into the system after each step. Which gives RNNs to allow the network to remember past information by feeding the output from one step into next step. This helps the network understand the context of what has already happened and make better predictions based on that. <br/>
 
@@ -21,13 +24,14 @@ In this study, I tried to overcome the vanishing gradients problem by using an e
 
 ![image](https://github.com/user-attachments/assets/63638495-0d2f-441b-ad37-3b2fe4a25acf)
 
-This bidirectional nature of BiLSTMs makes them particularly effective for tasks where understanding both fast and future context is crucial. To demonstrate it's capabilities, I built an emotion classifier, one of the most famous NLP tasks in literature.
+This bidirectional nature of BiLSTMs makes them particularly effective for tasks where understanding both fast and future context is crucial. To demonstrate it's capabilities, I built 2 emotion classifiers: one is a RNN network build from scratch, and the other is a BiLSTM network using *TensorFlow*. <br/>
+*I was not able to implement BiLSTM from scratch because it requires heavy math + backprop through time*
 
 <br/>
 <br/>
 
 ## Methods
-To demonstrate the power of BiLSTMs on larger datasets, I choose [Twitter Emotion Classification Dataset](https://www.kaggle.com/datasets/aadyasingh55/twitter-emotion-classification-dataset), which contains more than 400k instances with just 2 features:
+To demonstrate the power of BiLSTMs over traditional RNNs on larger datasets, I choose [Twitter Emotion Classification Dataset](https://www.kaggle.com/datasets/aadyasingh55/twitter-emotion-classification-dataset), which contains more than 400k instances with just 2 features:
 - _text_: string feature representing the tweet.
 - _label_: classification label with the following values:
   * 0 : sadness
@@ -37,4 +41,5 @@ To demonstrate the power of BiLSTMs on larger datasets, I choose [Twitter Emotio
   * 4 : fear
   * 5 : surprise
 
+First part of this experiment was to clean the texts. Because of the "tweet" nature of this dataset, the datapoints may have some noise like tags, emojis, html, etc. To overcome this issue I used 
 
