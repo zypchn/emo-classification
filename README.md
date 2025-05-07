@@ -19,6 +19,7 @@ Finally, I post-padded (padding=False) the input tokens to 15. This concludes th
 Now for the _Model_ part I defined 2 models with the following architectures:
 1) **Scratch-RNN**: 1 hidden layer block with 128 hidden layers -> Dense layer with softmax activation. (lr = 2e-2, with SGD as the optimizer)
 2) **Simple-RNN**: 1 hidden layer block (`SimpleRNN` from _Keras_) with 32 hidden layers -> Dropout layer with 0.3 -> Dense layer with softmax activation. (lr = 1e-3, with Adam as the optimizer)
+I trained _Scratch-RNN_ for 500 epochs and _Simple-RNN_ for 10 epochs. The logic behind this gap is that I expected _Simple-RNN_ to be more stable.
 
 <br/>
 <br/>
