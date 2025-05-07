@@ -31,26 +31,9 @@ This bidirectional nature of BiLSTMs makes them particularly effective for tasks
 <br/>
 
 ## Methods
-To demonstrate the power of BiLSTMs over traditional RNNs on larger datasets, I choose [Twitter Emotion Classification Dataset](https://www.kaggle.com/datasets/aadyasingh55/twitter-emotion-classification-dataset), which contains more than 400k instances with just 2 features:
-- _text_: string feature representing the tweet.
-- _label_: classification label with the following values:
-  * 0 : sadness
-  * 1 : joy
-  * 2 : love
-  * 3 : anger
-  * 4 : fear
-  * 5 : surprise
-
-First part of this experiment was to clean the texts. Because of the "tweet" nature of this dataset, the datapoints may have some noise like tags, emojis, html, etc. To overcome this issue I used [text_hammer](https://pypi.org/project/text-hammer/), a text preprocessing package with the following features (which I applied to our training data on both models):
-- string's all characters are converted to lower-case
-- un-contract expressions (i'm -> i am)
-- remove emails, urls, html tags, etc.
-- remove accented and special characters
-- lemmatization
-
-By using the post-processed train data and raw test data I created vocabularies in both cases. Whilst RNN had nearly had 60k tokens, LSTM had only 20k, which is a huge drop. 
-
-After that, I crated the RNN model with 2 hidden layer blocks with the size of 128. LSTM also has a size of 128, but it has 3 layers.
+The dataset provided, which is `data.py`, has just 80 instances. And wi
+After that, I crated the RNN model with 2 hidden layer blocks with the size of 128. BiLSTM also has a size of 128, but it has 3 layers.
+I trained the RNN for 500 epochs due to it's non-framework nature, and BiLSTM for just 10 epochs
 
 <br/>
 <br/>
