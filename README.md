@@ -45,10 +45,11 @@ In my opinion the fact that my _Simple-RNN_ model performed worse because it has
 - Gradient Vanishing
 - Activation Functions
 
-Further experimentation is required to inspect these solutions. One possible solution is to perform batch normalization to prevent gradienr vanishing.
+Further experimentation is required to inspect these solutions. One possible solution is to perform batch normalization to prevent gradient vanishing.
 
 <br/>
 <br/>
 
 ### Resources
-
+- [Introduction to RNNs](https://www.geeksforgeeks.org/introduction-to-recurrent-neural-network/)
+- [rnn-from-scratch](https://github.com/vzhou842/rnn-from-scratch)
