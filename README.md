@@ -50,6 +50,8 @@ First part of this experiment was to clean the texts. Because of the "tweet" nat
 
 By using the post-processed train data and raw test data I created vocabularies in both cases. Whilst RNN had nearly had 60k tokens, LSTM had only 20k, which is a huge drop. 
 
+After that, I crated the RNN model with 2 hidden layer blocks with the size of 128. LSTM also has a size of 128, but it has 3 layers.
+
 <br/>
 <br/>
 
