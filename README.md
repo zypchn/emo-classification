@@ -8,37 +8,23 @@ In traditional neural networks, the information flows in one direction from inpu
 
 ![image](https://github.com/user-attachments/assets/573df663-5b47-4b1d-af16-9bddb1f054c0)
 
-However, RNNs suffer from a common issue called _vanishing gradients_. The vanishing gradient problem is a challenge that emerges during backpropagation when the derivatives or slopes of the activation functions become progressively smaller as we move backward through the layers of a neural network. The weight updates becomes extremely tiny, or even exponentially small, it can significantly prolong the training time, and in the worst-case scenario, it can halt the training process altogether. <br/>
-
-There are a number of ways to overcome this issue:
-- Batch Normalization
-- ReLU as Activation Function
-- Skip Connections and Residual Networks (ResNets)
-- Long Short-Term Memory Networks (LSTMs) *
-- Gated Recurrent Units (GRUs)
-
-In this study, I tried to overcome the vanishing gradients problem by using an extension of the LSTM networks, namely BiLSTM (Bidirectional Long Short-Term Memory). BiLSTMs allow information to flow from both forward and backward, unlike their traiditional predecessor LSTMs which processes sequences in only one direction. BiLSTM's consists of two seperate LSTM layers:
-- **Forward LSTM:** Processes the sequence from start to end
-- **Backward LSTM:** Processes the sequence from end to start
-<br/>
-
-![image](https://github.com/user-attachments/assets/63638495-0d2f-441b-ad37-3b2fe4a25acf)
-
-This bidirectional nature of BiLSTMs makes them particularly effective for tasks where understanding both fast and future context is crucial. To demonstrate it's capabilities, I built 2 emotion classifiers: one is a RNN network build from scratch, and the other is a BiLSTM network using *TensorFlow*. <br/>
-*I was not able to implement BiLSTM from scratch because it requires heavy math + backprop through time*
+In this study, I wrote 2 RNN models: one from scratch (without any ML frameworks) and one with using [Tensorflow-Keras](https://www.tensorflow.org/guide/keras). The objective of this study is to determine the usefulness (if we need them or not) of ML frameworks on very small datasets.
 
 <br/>
 <br/>
 
 ## Methods
-The dataset provided, which is `data.py`, has just 80 instances. And wi
-After that, I crated the RNN model with 2 hidden layer blocks with the size of 128. BiLSTM also has a size of 128, but it has 3 layers.
-I trained the RNN for 500 epochs due to it's non-framework nature, and BiLSTM for just 10 epochs
+The dataset provided, which is `data.py`, has just 80 instances with very short sentences. There was no need to preprocess the data, as it was already clean and splitted for train/test. I just applied boolean to integer conversion for labels. After that, I tokenized the dataset using the [Keras-Tokenizer](https://www.tensorflow.org/api_docs/python/tf/keras/preprocessing/text/Tokenizer) with a vocabulary size of 25.
+Finally, I post-padded (padding=False) the input tokens to 15. This concludes the _Data_ part. <br/>
+Now for the _Model_ part I defined 2 models with the following architectures:
+1) **Scratch-RNN**: 1 hidden layer block with 128 hidden layers -> Dense layer with softmax activation. (lr = 2e-2, with SGD as the optimizer)
+2) **Simple-RNN**: 1 hidden layer block (`SimpleRNN` from _Keras_) with 32 hidden layers -> Dropout layer with 0.3 -> Dense layer with softmax activation. (lr = 1e-3, with Adam as the optimizer)
 
 <br/>
 <br/>
 
 ## Results
-![download](https://github.com/user-attachments/assets/710db508-1f05-4f1c-bb23-d7d3a7552272)
-![image](https://github.com/user-attachments/assets/c0899c60-5e6e-4911-b4fd-c3191d3360d4)
+Scratch-RNN    | Simple-RNN
+:-------------------------:|:-------------------------:
+![download](https://github.com/user-attachments/assets/04291961-d272-4a93-9f52-37c5537cb818) | ![download](https://github.com/user-attachments/assets/506cff4d-b2bd-4706-a7a3-aa3864b9711d)
 
