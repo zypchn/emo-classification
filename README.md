@@ -41,5 +41,19 @@ To demonstrate the power of BiLSTMs over traditional RNNs on larger datasets, I 
   * 4 : fear
   * 5 : surprise
 
-First part of this experiment was to clean the texts. Because of the "tweet" nature of this dataset, the datapoints may have some noise like tags, emojis, html, etc. To overcome this issue I used 
+First part of this experiment was to clean the texts. Because of the "tweet" nature of this dataset, the datapoints may have some noise like tags, emojis, html, etc. To overcome this issue I used [text_hammer](https://pypi.org/project/text-hammer/), a text preprocessing package with the following features (which I applied to our training data on both models):
+- string's all characters are converted to lower-case
+- un-contract expressions (i'm -> i am)
+- remove emails, urls, html tags, etc.
+- remove accented and special characters
+- lemmatization
+
+By using the post-processed train data and raw test data I created vocabularies in both cases. Whilst RNN had nearly had 60k tokens, LSTM had only 20k, which is a huge drop. 
+
+<br/>
+<br/>
+
+## Results
+![download](https://github.com/user-attachments/assets/710db508-1f05-4f1c-bb23-d7d3a7552272)
+![image](https://github.com/user-attachments/assets/c0899c60-5e6e-4911-b4fd-c3191d3360d4)
 
