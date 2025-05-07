@@ -38,4 +38,17 @@ Scratch-RNN    | Simple-RNN
 <br/>
 
 ## Discussions
+Performance of _Scratch-RNN_ was off the charts, with nearly 1.00 accuracy on both train and test splits. However,_Simple-RNN_ performed slightly worse compared to it's counterpart with a maximum accuracy of 0.85 on test set and a possible overfit problem on the last 100-200 epochs. It should be noted that without the Dropout layer, _Simple-RNN_ had an accuracy decrease of 10-20%, so to compare both models effectively I choose the latter model. <br/>
+In my opinion the fact that my _Simple-RNN_ model performed worse because it has a relatively complex architecture for the dataset. In other words, dataset is to "perfect" for such a deep network. Other possible reasons may include:
+- Gap Between Number of Epochs (500 vs 10)
+- Tokenization Algorithms
+- Gradient Vanishing
+- Activation Functions
+
+Further experimentation is required to inspect these solutions. One possible solution is to perform batch normalization to prevent gradienr vanishing.
+
+<br/>
+<br/>
+
+### Resources
 
