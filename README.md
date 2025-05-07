@@ -5,6 +5,12 @@
 
 ## Introduction
 In traditional neural networks, the information flows in one direction from input to output. However in RNNs, information is fed back into the system after each step. Which gives RNNs to allow the network to remember past information by feeding the output from one step into next step. This helps the network understand the context of what has already happened and make better predictions based on that. <br/>
+Here are the key components of RNN based models:
+- **Recurrent Neurons:** Fundamental processing unit in RNN. Recurrent units hold a hidden state that maintains information about previous inputs in a sequence.
+- **RNN Unfolding:** Process of expanding the recurrent structure over time steps. During unfolding each step of the sequence is represented as a separate layer in a series illustrating how information flows across each time step.
+
+This unrolling enables backpropagation through time (BPTT) a learning process where errors are propagated across time steps to adjust the network’s weights
+
 
 ![image](https://github.com/user-attachments/assets/573df663-5b47-4b1d-af16-9bddb1f054c0)
 
