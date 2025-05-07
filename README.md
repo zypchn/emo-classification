@@ -28,3 +28,13 @@ Scratch-RNN    | Simple-RNN
 :-------------------------:|:-------------------------:
 ![download](https://github.com/user-attachments/assets/04291961-d272-4a93-9f52-37c5537cb818) | ![download](https://github.com/user-attachments/assets/506cff4d-b2bd-4706-a7a3-aa3864b9711d)
 
+| Model | Last Train Loss | Last Test Loss |
+|--|--|--|
+| Scratch-RNN | 0.009 | 0.009 
+| Simple-RNN | 0.3616 | 0.4663 
+
+<br/>
+<br/>
+
+## Discussions
+
