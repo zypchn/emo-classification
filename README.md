@@ -14,7 +14,7 @@ In this study, I wrote 2 RNN models: one from scratch (without any ML frameworks
 <br/>
 
 ## Methods
-The dataset provided, which is `data.py`, has just 80 instances with very short sentences. There was no need to preprocess the data, as it was already clean and splitted for train/test. I just applied boolean to integer conversion for labels. After that, I tokenized the dataset using the [Keras-Tokenizer](https://www.tensorflow.org/api_docs/python/tf/keras/preprocessing/text/Tokenizer) with a vocabulary size of 25.
+The dataset provided, which is `data.py`, has just 80 instances with very short sentences. There was no need to preprocess the data (besides tokenization), as it was already clean and splitted for train/test. I just applied boolean to integer conversion for labels. After that, I tokenized the dataset using the [Keras-Tokenizer](https://www.tensorflow.org/api_docs/python/tf/keras/preprocessing/text/Tokenizer) with a vocabulary size of 25.
 Finally, I post-padded (padding=False) the input tokens to 15. This concludes the _Data_ part. <br/>
 Now for the _Model_ part I defined 2 models with the following architectures:
 1) **Scratch-RNN**: 1 hidden layer block with 128 hidden layers -> Dense layer with softmax activation. (lr = 2e-2, with SGD as the optimizer)
