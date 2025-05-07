@@ -1,4 +1,4 @@
-# emo-classification-bilstm
+# Sentiment Analysis with RNNs
 
 <br/>
 <br/>
@@ -7,6 +7,10 @@
 In traditional neural networks, the information flows in one direction from input to output. However in RNNs, information is fed back into the system after each step. Which gives RNNs to allow the network to remember past information by feeding the output from one step into next step. This helps the network understand the context of what has already happened and make better predictions based on that. <br/>
 
 ![image](https://github.com/user-attachments/assets/573df663-5b47-4b1d-af16-9bddb1f054c0)
+
+Here are the key components of RNN architecture:
+- **Recurrent Neurons:** The fundamental processing unit in RNN is a Recurrent Unit. Recurrent units hold a hidden state that maintains information about previous inputs in a sequence. 
+- **RNN Unfolding:** RNN unfolding or unrolling is the process of expanding the recurrent structure over time steps. This unrolling enables backpropagation through time (BPTT) a learning process where errors are propagated across time steps to adjust the network’s weights.
 
 In this study, I wrote 2 RNN models: one from scratch (without any ML frameworks) and one with using [Tensorflow-Keras](https://www.tensorflow.org/guide/keras). The objective of this study is to determine the usefulness (if we need them or not) of ML frameworks on very small datasets.
 
@@ -45,7 +49,7 @@ In my opinion the fact that my _Simple-RNN_ model performed worse because it has
 - Gradient Vanishing
 - Activation Functions
 
-Further experimentation is required to inspect these solutions. One possible solution is to perform batch normalization to prevent gradient vanishing.
+Further experimentation is required to inspect these solutions. One possible solution is to perform batch normalization to prevent gradient vanishing. But for this study alone, I can colclude that using ML frameworks are not necessary for clean and small datasets.
 
 <br/>
 <br/>
